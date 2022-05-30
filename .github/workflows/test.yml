@@ -26,3 +26,15 @@ jobs:
       - name: Print DIR
         shell: PowerShell
         run: ls
+        
+      - name: Dowload merkely
+        shell: PowerShell
+        run: wget "https://github.com/merkely-development/cli/releases/download/v1.5.0/merkely_1.5.0_windows_amd64.zip" -outfile "merkely_1.5.0_windows_amd64.zip"
+      
+      - name: Print DIR again
+        shell: PowerShell
+        run: ls
+        
+      - name: Print DIR in CMD
+        shell: cmd
+        run: dir
