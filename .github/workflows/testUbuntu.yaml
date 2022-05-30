@@ -25,9 +25,11 @@ jobs:
 
       - name: Run Python Script
         run: |
+          echo "MERKELY_COMPLIANT=true" >> ${GITHUB_ENV}
           chmod a+x error.py
           ./error.py
+          echo "MERKELY_COMPLIANT=false" >> ${GITHUB_ENV}
         
       - name: Finalize
         if: always()
-        run: ls -l
+        run: echo $MERKELY_COMPLIANT
