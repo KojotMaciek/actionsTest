@@ -43,14 +43,12 @@ jobs:
       #  shell: PowerShell
       #  run: Expand-Archive merkely_1.5.0_windows_amd64.zip -DestinationPath .
         
-      - name: Test Merkely
-        shell: PowerShell
-        run: .\merkely.exe status
+      # - name: Test Merkely
+      #  shell: PowerShell
+      #  run: .\merkely.exe status
         
       - name: Run TestScript
         shell: PowerShell
-        run: .\testCode.ps1
-        
-      - name: LastExitCode
-        shell: PowerShell
-        run: $LASTEXITCODE
+        run: | 
+          .\testCode.ps1
+          $LASTEXITCODE
