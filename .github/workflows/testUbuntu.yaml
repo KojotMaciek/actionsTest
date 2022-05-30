@@ -29,4 +29,5 @@ jobs:
           ./error.py
         
       - name: Finalize
+        if: always()
         run: ls -l
