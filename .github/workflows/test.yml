@@ -27,9 +27,9 @@ jobs:
         shell: PowerShell
         run: ls
         
-      - name: Dowload merkely
-        shell: PowerShell
-        run: wget "https://github.com/merkely-development/cli/releases/download/v1.5.0/merkely_1.5.0_windows_amd64.zip" -outfile "merkely_1.5.0_windows_amd64.zip"
+      #- name: Dowload merkely
+      #  shell: PowerShell
+      #  run: wget "https://github.com/merkely-development/cli/releases/download/v1.5.0/merkely_1.5.0_windows_amd64.zip" -outfile "merkely_1.5.0_windows_amd64.zip"
       
       - name: Print DIR again
         shell: PowerShell
@@ -39,10 +39,14 @@ jobs:
         shell: cmd
         run: dir
         
-      - name: Unzip downloaded file
-        shell: PowerShell
-        run: Expand-Archive merkely_1.5.0_windows_amd64.zip -DestinationPath .
+      # - name: Unzip downloaded file
+      #  shell: PowerShell
+      #  run: Expand-Archive merkely_1.5.0_windows_amd64.zip -DestinationPath .
         
       - name: Test Merkely
         shell: PowerShell
         run: .\merkely.exe status
+        
+      - name: Run TestScript
+        shell: PowerShell
+        run: .\testCode.ps1
