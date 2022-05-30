@@ -50,3 +50,7 @@ jobs:
       - name: Run TestScript
         shell: PowerShell
         run: .\testCode.ps1
+        
+      - name: LastExitCode
+        shell: PowerShell
+        run: $LASTEXITCODE
