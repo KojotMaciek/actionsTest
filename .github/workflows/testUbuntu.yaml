@@ -24,7 +24,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run Python Script
-        run: ./error.py
+        run: |
+          chmod a+x error.py
+          ./error.py
         
       - name: Finalize
         run: ls -l
